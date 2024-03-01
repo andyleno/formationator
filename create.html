@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Create | Create Formation</title>
+  <meta name="title" content="Create your own Football Formation with Player Photos">
+  <meta name="description"
+    content="Make your own football lineup with player photos. A free squad builder that lets you create a team with your selected player portraits.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Create your own Football Formation with Player Photos">
+  <meta property="og:type" content="website">
+  <meta property="og:description"
+    content="Make your own football lineup with player photos. A free squad builder that lets you create a team with your selected player portraits.">
+  <meta property="og:image" content="http://www.createformation.com/images/og_image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1500">
+  <meta property="og:image:height" content="700">
+  <meta name="theme-color" content="#00d1b2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&amp;amp;subset=latin-ext">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./stylesheets/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./stylesheets/main.css">
+  <script src="./javascripts/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href="./stylesheets/select2.min.css">
+  <link rel="stylesheet" href="./stylesheets/footable.standalone.min.css">
+  <!-- <script id="pirschjs" defer="" type="text/javascript" src="https://api.pirsch.io/pirsch.js"
+    data-code="gVYgLDI8qFlmZ5rjOJaI4CGwDU9z9Jlo"></script> -->
+  <!-- <script src="https://cmp.uniconsent.com/v2/stub.min.js"></script>
+  <script async="" src="https://cmp.uniconsent.com/v2/d73d9ea630/cmp.js"></script> -->
+  <!-- <script type="text/javascript">window.googletag = window.googletag || {};
+    window.googletag.cmd = window.googletag.cmd || [];
+    window.googletag.cmd.push(function () {
+      window.googletag.pubads().enableAsyncRendering();
+      window.googletag.pubads().disableInitialLoad();
+    });
+    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;</script> -->
+  <!-- <script>__tcfapi("addEventListener", 2, function (tcData, success) {
+      if (success && tcData.unicLoad === true) {
+        if (!window._initAds) {
+          window._initAds = true;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = '//dsh7ky7308k4b.cloudfront.net/publishers/createformationcom.min.js';
+          document.head.appendChild(script);
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = '//btloader.com/tag?o=5184339635601408&upapi=true';
+          document.head.appendChild(script);
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5226306412403232';
+          document.head.appendChild(script);
+        }
+      }
+    });</script> -->
+</head><!--if lt IE 8p.browserupgrade
+  | You are using an 
+  strong outdated
+  |  browser. Please 
+  a(href='http://browsehappy.com/') upgrade your browser
+  |  to improve your experience.-->
+
+<body>
+  <nav class="navbar is-dark" role="navigation">
+    <div class="navbar-brand"><a class="navbar-item" href="/"> <img class="logo" src="./images/logo.png"><span
+          class="site-title">Create Formation</span></a>
+      <div class="navbar-burger" data-target="navMenu"><span></span><span></span><span> </span></div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-end">
+        <div class="navbar-item"><a class="button is-white is-normal" href="feedback">Feedback</a></div>
+        <div class="navbar-item"><a class="button is-white is-normal" href="legends-list">Legends List</a></div>
+        <div class="navbar-item"><a class="button is-primary is-large" href="create">Create Formation</a></div>
+      </div>
+    </div>
+  </nav>
+  <section class="section main">
+    <div class="container is-fluid">
+      <div class="notification is-primary has-text-centered"> <button class="delete"></button><strong>Players and photos
+          database has been updated with the summer 2023 transfers!</strong></div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <div id="createformationcom41603"></div>
+          <div id="createformationcom41608"> </div>
+        </div>
+      </div>
+      <div class="create-header">
+        <h1 class="title is-1 is-spaced">Create your own football formation</h1>
+        <h2 class="subtitle is-3">Choose your favorite players to form your squad.</h2>
+        <ol class="is-size-5">
+          <li>Select the formation for your lineup.</li>
+          <li>Search and add players to your squad.</li>
+          <li>Add a title for your formation.</li>
+          <li>Download your lineup and share it with your friends or on social media.</li>
+        </ol>
+      </div>
+      <hr>
+      <div class="level">
+        <div class="level-item">
+          <div class="field is-horizontal">
+            <div class="field-label"><label class="label">Formation:</label></div>
+            <div class="field-body">
+              <div class="select"><select id="formationSelect">
+                  <option value="3412">3-4-1-2</option>
+                  <option value="3421">3-4-2-1</option>
+                  <option value="343">3-4-3</option>
+                  <option value="352">3-5-2</option>
+                  <option value="41212a">4-1-2-1-2 (a)</option>
+                  <option value="41212b">4-1-2-1-2 (b)</option>
+                  <option value="4141">4-1-4-1</option>
+                  <option value="4222">4-2-2-2</option>
+                  <option value="4231a">4-2-3-1 (a)</option>
+                  <option value="4231b">4-2-3-1 (b)</option>
+                  <option value="4312">4-3-1-2</option>
+                  <option value="4321">4-3-2-1</option>
+                  <option value="433a" selected="">4-3-3 (a)</option>
+                  <option value="433b">4-3-3 (b)</option>
+                  <option value="433c">4-3-3 (c)</option>
+                  <option value="433d">4-3-3 (d)</option>
+                  <option value="433e">4-3-3 (e)</option>
+                  <option value="4411">4-4-1-1</option>
+                  <option value="442a">4-4-2 (a)</option>
+                  <option value="442b">4-4-2 (b)</option>
+                  <option value="451a">4-5-1 (a)</option>
+                  <option value="451b">4-5-1 (b)</option>
+                  <option value="5212">5-2-1-2</option>
+                  <option value="5221">5-2-2-1</option>
+                  <option value="532">5-3-2</option>
+                </select></div>
+            </div>
+          </div>
+        </div>
+        <div class="level-item">
+          <div class="field is-horizontal">
+            <div class="field-label"><label class="label">Title:</label></div>
+            <div class="field-body"><input class="input" id="formation-title" type="text"
+                placeholder="Title for your squad"></div>
+          </div>
+        </div>
+        <div class="level-item">
+          <div class="field is-horizontal"><span class="tag is-link new">NEW!</span>
+            <div class="field-label"><label class="label">Theme:</label></div>
+            <div class="field-body">
+              <div class="select"><select id="pitchThemeSelect">
+                  <option value="classic">Classic</option>
+                  <option value="midnight">Midnight</option>
+                  <option value="forest">Forest</option>
+                  <option value="twilight">Twilight</option>
+                  <option value="skyline">Skyline</option>
+                  <option value="urban">Urban</option>
+                  <option value="arctic">Arctic</option>
+                  <option value="premiership">Premiership</option>
+                  <option value="pine">Pine</option>
+                  <option value="spring">Spring</option>
+                  <option value="vintage">Vintage</option>
+                </select></div>
+            </div>
+          </div>
+        </div>
+        <div class="level-item"><a class="button is-primary is-rounded" id="download">Download Image</a></div>
+      </div>
+      <div class="columns is-desktop main-area">
+        <div class="column is-narrow is-5" id="canvas-container">
+          <div id="draft">
+            <div class="draft-container" id="draft-container-0"></div>
+            <div class="draft-container" id="draft-container-1"></div>
+            <div class="draft-container" id="draft-container-2"></div>
+            <div class="draft-container" id="draft-container-3"></div>
+            <div class="draft-container" id="draft-container-4"></div>
+            <div class="draft-container" id="draft-container-5"></div>
+            <div class="draft-container" id="draft-container-6"></div>
+            <div class="draft-container" id="draft-container-7"></div>
+            <div class="draft-container" id="draft-container-8"></div>
+            <div class="draft-container" id="draft-container-9"></div>
+            <div class="draft-container" id="draft-container-10"></div>
+          </div><canvas id="canvas1" width="1000" height="1400"></canvas>
+        </div>
+        <div class="column">
+          <div class="tool">
+            <div class="columns is-mobile tool-headings">
+              <div class="column is-1 is-flex"><span class="tool-heading">Position</span></div>
+              <div class="column is-6"><span class="tool-heading">Search *</span></div>
+              <div class="column is-4-tablet is-3-mobile"><span class="tool-heading">Player Name</span></div>
+              <div class="column is-1-tablet is-2-mobile"><span class="tool-heading">Remove</span></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+            <div class="columns is-mobile position">
+              <div class="column is-1 is-flex"><span class="position-label"></span></div>
+              <div class="column is-6 search-level"><select class="search-entity" placeholder=""
+                  style="width:100%"></select></div>
+              <div class="column is-4-tablet is-3-mobile search-selected"></div>
+              <div class="column is-1-tablet is-2-mobile"><a class="delete is-medium remove-player"></a></div>
+            </div>
+          </div>
+          <div class="level extra-options">
+            <div class="level-item"><label class="checkbox"><input type="checkbox" id="clubSearch"> * Also search by
+                club</label></div>
+            <div class="level-item"><a class="button is-info is-rounded toggleModal">Save/Load Formation Data</a>
+              <div class="columns"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <div id="createformationcom41605"></div>
+        <div id="createformationcom41609"></div>
+      </div>
+    </div>
+  </section>
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title has-text-centered">Save/Load Formation Data</p><button class="delete toggleModal"
+          aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="columns">
+          <div class="column">
+            <h3 class="mb-2"> Save Current Data</h3>
+            <p>In order to save the current formation (players, formation and title), click the button below to download
+              a small <span class="has-text-weight-bold">createFormation.txt</span> file containing all the necessary
+              data.</p>
+            <div class="has-text-centered mt-4"><a class="button is-info is-rounded" id="saveFormation">Save Formation
+                Data</a></div>
+          </div>
+          <div class="column">
+            <h3 class="mb-2"> Load Data</h3>
+            <p>When you are ready to continue your work, copy and paste below the content of the <span
+                class="has-text-weight-bold">createFormation.txt</span> file you previously downloaded. </p><i>WARNING!
+              The current formation will be cleared of all data.</i><textarea class="textarea mt-4"
+              id="formationDataHolder" cols="40" rows="8"></textarea>
+            <div class="has-text-centered mt-4"><a class="button is-info is-rounded" id="loadFormation">Load Formation
+                Data</a></div>
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <div class="has-text-right"><a class="button toggleModal">Close</a></div>
+      </footer>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./javascripts/select2.min.js"></script>
+  <script src="./javascripts/formations.js"></script>
+  <script src="./javascripts/main.js"></script>
+  <footer class="footer">
+    <div id="uniconsent-config"></div>
+    <div class="wrapper">
+      <ul>
+        <li class="facebook"><a href="https://www.facebook.com/createformation/" target="_blank" rel="nofollow"><i
+              class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+        <li class="instagram"><a href="https://www.instagram.com/create_formation/" target="_blank" rel="nofollow"><i
+              class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="./javascripts/navbar.js"></script>
+</body>
