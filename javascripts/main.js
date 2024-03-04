@@ -82,7 +82,7 @@ $(document).ready(function () {
 
     $(".search-entity").select2({
         ajax: {
-            url: "/search",
+            url: "javascripts/data/players.json",
             dataType: "json",
             delay: 250,
             data: function (params) {
