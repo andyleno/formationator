@@ -2,7 +2,7 @@ let playersOnDraft = {};
 // #TODO:
 // - Drag and drop?
 
-const cfUrl = "http://localhost:8888/formationator/javascripts/data/playerimages/";
+const cfUrl = "http://laytownselector.com/javascripts/data/playerimages/";
 let currentPitchTheme = "classic";
 let formationTitle = "";
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
 
     $(".search-entity").select2({
         ajax: {
-            url: "http://localhost:8888/formationator/javascripts/data/newplayers.json",
+            url: "http://laytownselector.com/javascripts/data/newplayers.json",
             dataType: "json",
             delay: 250,
             data: function (params) {
@@ -404,7 +404,7 @@ function loadPlayer(s3url, id) {
             // type: 'GET',
             // url: '/api/player/p/' + s3url
 
-            url: "http://localhost:8888/formationator/javascripts/data/players/" + s3url + ".json",
+            url: "http://laytownselector.com/javascripts/data/players/" + s3url + ".json",
             dataType: "json",
         }).then(function (data) {
             const option = new Option(data.name, data.id, true, true);
