@@ -2,7 +2,7 @@ let playersOnDraft = {};
 // #TODO:
 // - Drag and drop?
 
-const cfUrl = "https://d13ni07q601mto.cloudfront.net/";
+const cfUrl = "http://localhost:8888/formationator/javascripts/data/playerimages/";
 let currentPitchTheme = "classic";
 let formationTitle = "";
 
@@ -82,14 +82,13 @@ $(document).ready(function () {
 
     $(".search-entity").select2({
         ajax: {
-            url: "javascripts/data/players.json",
+            url: "http://localhost:8888/formationator/javascripts/data/newplayers.json",
             dataType: "json",
             delay: 250,
             data: function (params) {
-                var clubSearch = ($('#clubSearch').is(':checked')) ? true : false;
+               
                 return {
-                    q: params.term,
-                    clubSearch: clubSearch
+                    q: params.term
                 };
             },
             processResults: function (data) {
@@ -107,7 +106,7 @@ $(document).ready(function () {
     $(".search-entity").on("select2:select", async function (e) {
         const selected = e.params.data;
         const id = $(this).data('id');
-        const imgURL = cfUrl + selected.s3url + ".png";
+        const imgURL = cfUrl + selected.s3url + ".jpg";
         const playerName = selected.text;
 
         playersOnDraft[id] = { "imgURL": imgURL, "name": playerName, "s3url": selected.s3url, "_id": selected._id };
@@ -159,7 +158,7 @@ function optionData(data, container) {
 
 function template(data, container) {
     if (data.text && data.s3url) {
-        const pImg = `<div class="column is-one-third"><img crossorigin="anonymous" class="player-img" src="${cfUrl}${data.s3url}.png"/></div>`;
+        const pImg = `<div class="column is-one-third"><img crossorigin="anonymous" class="player-img" src="${cfUrl}${data.s3url}.jpg"/></div>`;
         const pName = '<div class="column"><p class="player-name"><strong>' + data.text + '</strong></p>';
         const pDetails = '<p class="player-details">' + data.club + ' , ' + data.age + ' , ' + data.pos + '</p></div>';
         return '<div class="columns">' + pImg + pName + pDetails + '</div>';
@@ -294,7 +293,7 @@ function prepareCanvas() {
     ctx.font = "20px arial";
     ctx.fillStyle = pitchThemes[currentPitchTheme].textColor;
     ctx.textAlign = "center";
-    ctx.fillText("Created with CreateFormation.com", 820, 1390);
+    // ctx.fillText("Created with CreateFormation.com", 820, 1390);
 
     for (let i = 0; i < 11; i++) {
         const newPos = currentFormation[i];
@@ -402,17 +401,20 @@ function loadPlayer(s3url, id) {
         // Fetch the preselected item, and add to the control
         const playerSelect = $('.search-entity[data-id="' + id + '"]');
         $.ajax({
-            type: 'GET',
-            url: '/api/player/p/' + s3url
+            // type: 'GET',
+            // url: '/api/player/p/' + s3url
+
+            url: "http://localhost:8888/formationator/javascripts/data/players/" + s3url + ".json",
+            dataType: "json",
         }).then(function (data) {
             const option = new Option(data.name, data.id, true, true);
             playerSelect.append(option).trigger('change');
 
-            const imgURL = cfUrl + s3url + ".png?crossorigin";
+            const imgURL = cfUrl + s3url + ".jpg?crossorigin";
             const playerName = data.name;
 
             playersOnDraft[id] = { "name": playerName, "imgURL": imgURL, "s3url": s3url };
-            playerSelect.parent().siblings('.search-selected').html(data.name);
+            playerSelect.parent().siblings('.search-selected').text(data.name);
             upsertImage(id, imgURL, playerName).then(resolve).catch(reject);
         });
     });
